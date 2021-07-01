@@ -51,13 +51,6 @@ const startKeypressListener = () => {
   return keyboardListener
 }
 
-// import images
-const importAll = (r) => {
-  return r.keys().map(r);
-}
-
-const images = importAll(requireContext('../assets/images', false, /\.(png|jpe?g|svg)$/));
-
 const getTurkUniqueId = () => {
   const turkInfo = jsPsych.turk.turkInfo()
   const uniqueId = `${turkInfo.workerId}:${turkInfo.assignmentId}`

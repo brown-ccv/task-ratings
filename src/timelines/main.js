@@ -16,8 +16,9 @@ let primaryTimeline = [
     buttons: [lang.prompt.continue.button],
   }),
 ];
-
+// Countdown for 6 blocks. 1st block 30 min -> 25 min, 2nd 25 min -> 20 min, ..., 6th 5 min -> 0
 for (let i = 5; i >= 0; i--) {
+  // countdown takes in start and end in seconds
   primaryTimeline.push(countdown(300*(i+1), 300*i));
   primaryTimeline.push(beepScreen());
   primaryTimeline.push(enterRating())
