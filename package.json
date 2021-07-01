@@ -1,6 +1,6 @@
 {
   "name": "task-ratings",
-  "description": "all-in-one task starter app with jsPsych + React + Electron + psiturk ",
+  "description": "ratings task for OCD Patient study",
   "author": {
     "name": "Brown CCV",
     "email": "ccv-bot@brown.edu",

@@ -1,5 +1,5 @@
+import { lang } from '../config/main'
 const _ = require("lodash");
-const blank = require("../assets/images/blank.png")
 
 const countdown = (start, stop) => {
     const times = _.range(start, stop, -1);
@@ -10,11 +10,14 @@ const countdown = (start, stop) => {
 
     
     return {
-        type: 'image_keyboard_response',
-        stimulus: blank,
+        type: 'html_keyboard_response',
+        stimulus: `<h1>${lang.countdown.message}</h1>`,
         response_ends_trial: false,
         trial_duration: 1000,
         timeline: timeline,
+        on_finish: (data) => {
+            data.countdown = true
+        }
     }
 }
 

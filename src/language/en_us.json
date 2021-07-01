@@ -26,6 +26,7 @@
     "not_found": "Note: no event marker found."
   },
   "countdown": {
+    "message": "Timer",
     "finish": "Current block has ended"
   },
   "instructions": {

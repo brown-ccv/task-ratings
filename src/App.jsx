@@ -42,7 +42,7 @@ function App() {
     addToFirebase(data);
   };
   const desktopUpdateFunction = (data) => {
-    if (data.trial_type!=='image_keyboard_response')
+    if (data.countdown!==true)
       ipcRenderer.send("data", data);
   };
   const psiturkUpdateFunction = (data) => {
