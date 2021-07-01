@@ -12,7 +12,23 @@ const generateStartingOpts = (blockSettings) => {
 	return _.shuffle(_.flatten(startingOptions))
 }
 
+const beep = () => {
+	const context = new AudioContext()
+	const o = context.createOscillator()
+	const g = context.createGain()
+	o.type = 'sine'
+	o.connect(g)
+	g.connect(context.destination)
+	o.start()
+	o.stop(context.currentTime + 1)
+}
+
+const sleep = (ms) => {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export {
-	generateStartingOpts
+	generateStartingOpts,
+	beep,
+	sleep
 }
