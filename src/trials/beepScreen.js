@@ -1,5 +1,6 @@
 import { lang } from '../config/main'
-import { beep, sleep } from '../lib/taskUtils'
+import { beep } from '../lib/taskUtils'
+import { sleep } from '../lib/utils'
 import { baseStimulus } from '../lib/markup/stimuli'
 
 const beepScreen = () => {

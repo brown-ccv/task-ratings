@@ -23,12 +23,7 @@ const beep = () => {
 	o.stop(context.currentTime + 1)
 }
 
-const sleep = (ms) => {
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 export {
 	generateStartingOpts,
-	beep,
-	sleep
+	beep
 }
