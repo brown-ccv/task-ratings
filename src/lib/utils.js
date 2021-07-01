@@ -1,5 +1,4 @@
 import { jsPsych } from 'jspsych-react'
-import requireContext from 'require-context.macro'
 
 const sleep = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
