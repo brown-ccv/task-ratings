@@ -95,7 +95,6 @@ export {
   deepCopy,
   formatDollars,
   generateWaitSet,
-  images,
   startKeypressListener,
   getProlificId,
   getTurkUniqueId,
