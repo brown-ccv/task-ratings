@@ -46,7 +46,7 @@ html, body, #root, .App {
 }
 
 .main-prompt, .center_container {
-  height: 100vh;
+  height: 95vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -56,6 +56,18 @@ html, body, #root, .App {
 .main-prompt {
   margin-top: -10%;
   margin-bottom: -5%;
+}
+
+.countdown {
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end !important;
+}
+
+#jspsych-survey-multi-choice-0 {
+  text-align: center;
 }
 
 #fixation-dot {

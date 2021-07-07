@@ -11,7 +11,7 @@ const countdown = (start, stop) => {
     
     return {
         type: 'html_keyboard_response',
-        stimulus: `<h1>${lang.countdown.message}</h1>`,
+        stimulus: `<h1 class='countdown'>${lang.countdown.message}</h1>`,
         response_ends_trial: false,
         trial_duration: 1000,
         timeline: timeline,
