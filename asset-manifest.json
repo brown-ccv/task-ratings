@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "./static/css/main.6e416c74.chunk.css",
+    "main.js": "./static/js/main.e549665a.chunk.js",
+    "main.js.map": "./static/js/main.e549665a.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+    "static/css/2.8a1d60e6.chunk.css": "./static/css/2.8a1d60e6.chunk.css",
+    "static/js/2.9ef7022e.chunk.js": "./static/js/2.9ef7022e.chunk.js",
+    "static/js/2.9ef7022e.chunk.js.map": "./static/js/2.9ef7022e.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.f7c2c49c72308dff6aa06b7bbbccb609.js": "./precache-manifest.f7c2c49c72308dff6aa06b7bbbccb609.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.8a1d60e6.chunk.css.map": "./static/css/2.8a1d60e6.chunk.css.map",
+    "static/css/main.6e416c74.chunk.css.map": "./static/css/main.6e416c74.chunk.css.map",
+    "static/media/all.css": "./static/media/fa-solid-900.e8a427e1.woff2"
+  }
+}
