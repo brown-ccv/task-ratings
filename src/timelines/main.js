@@ -1,32 +1,28 @@
 import preamble from "./preamble";
-import taskBlock from "./taskBlock";
-import { countdown } from "@brown-ccv/behavioral-task-trials";
+import countdown from "../trials/countdown";
+import beepScreen from "../trials/beepScreen";
+import enterRating from "../trials/enterRating"
 import { cameraStart, cameraEnd } from "../trials/camera"
 import { lang, config } from "../config/main";
-import { practiceBlock } from "../config/practice";
-import { tutorialBlock } from "../config/tutorial";
-import { exptBlock1, exptBlock2 } from "../config/experiment";
 import { showMessage } from "@brown-ccv/behavioral-task-trials";
-import {
-  ageCheck,
-  sliderCheck,
-  demographics,
-  iusSurvey,
-  debrief,
-} from "../trials/quizTrials";
+
 
 let primaryTimeline = [
   preamble,
-  ageCheck,
-  sliderCheck,
-  countdown({ message: lang.countdown.message1 }),
-  taskBlock(practiceBlock),
-  countdown({ message: lang.countdown.message2 }),
-  taskBlock(exptBlock1),
-  demographics,
-  iusSurvey,
-  debrief,
+  showMessage(config, {
+    responseType: "html_button_response",
+    message: lang.instructions.main_instructions,
+    responseEndsTrial: true,
+    buttons: [lang.prompt.continue.button],
+  }),
 ];
+// Countdown for 6 blocks. 1st block 30 min -> 25 min, 2nd 25 min -> 20 min, ..., 6th 5 min -> 0
+for (let i = 5; i >= 0; i--) {
+  // countdown takes in start and end in seconds
+  primaryTimeline.push(countdown(300*(i+1), 300*i));
+  primaryTimeline.push(beepScreen());
+  primaryTimeline.push(enterRating())
+}
 
 if (config.USE_CAMERA) {
   primaryTimeline.splice(1,0,cameraStart())
@@ -38,16 +34,5 @@ primaryTimeline.push(showMessage(config, {
   message: lang.task.end,
 }))
 
-const mturkTimeline = [
-  preamble,
-  countdown({ message: lang.countdown.message1 }),
-  taskBlock(tutorialBlock),
-  countdown({ message: lang.countdown.message2 }),
-  taskBlock(exptBlock2),
-  showMessage(config, {
-    duration: 5000,
-    message: lang.task.end,
-  }),
-];
 
-export const tl = config.USE_MTURK ? mturkTimeline : primaryTimeline;
+export const tl = primaryTimeline;

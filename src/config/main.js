@@ -24,7 +24,7 @@ const audioCodes = {
   type: "sine",
 };
 
-const taskName = "honeycomb template";
+const taskName = "Ratings";
 
 // is this mechanical turk?
 let USE_MTURK = !jsPsych.turk.turkInfo().outsideTurk;
