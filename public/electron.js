@@ -13,6 +13,7 @@ const log = require('electron-log');
 // Define default environment variables
 let USE_EEG = false
 let VIDEO = false
+const HIDE_FRAME_ELECTRON = process.env.REACT_APP_HIDE_FRAME_ELECTRON === "true";
 
 // Event Trigger
 const { eventCodes, vendorId, productId, comName } = require('./config/trigger')
@@ -47,7 +48,7 @@ function createWindow () {
     mainWindow = new BrowserWindow({
       fullscreen: true,
       icon: './favicon.ico',
-      frame: false,
+      frame: !HIDE_FRAME_ELECTRON,
       webPreferences: {
         nodeIntegration: true,
         webSecurity: true
